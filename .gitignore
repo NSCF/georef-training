@@ -1,0 +1,8 @@
+/node_modules/
+/public/build/
+
+firebaseConfig.js
+keys.js
+fbAdminServiceAccount.js
+
+.DS_Store
