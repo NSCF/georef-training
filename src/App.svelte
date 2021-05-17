@@ -361,8 +361,8 @@
 	</div>
 	<div class="inline-input-block">
 		<p class="input-header">Uncertainty</p>
-		<input type="number" min="0" bind:value={uncertaintyVal} />
-		<select bind:value={uncertaintyUnit} >
+		<input type="number" min="0" disabled={georefSubmitted} bind:value={uncertaintyVal} />
+		<select disabled={georefSubmitted} bind:value={uncertaintyUnit} >
 			<option value=""></option>
 			<option value="m" >m</option>
 			<option value="km">km</option>
