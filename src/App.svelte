@@ -102,6 +102,7 @@
 			if(val && val.trim()){
 				//this basically a reset
 				locality = val.trim()
+				verbatimCoords = null
 				decimalCoords = null
 				uncertaintyVal = null
 				uncertaintyUnit = ""
