@@ -372,7 +372,11 @@
 	<div class="btn-flex">
 		<button class="action-btn" disabled={georefSubmitted} on:click={submitGeoref}>Submit my georef</button>
 		{#if iamleader}
+		<div>
+			<span>{coordsArray.length} georef/s</span>
 			<button class="action-btn" disabled={!georefCount || revealAll} on:click={revealGeorefs}>Reveal georefs</button>
+		</div>
+			
 		{/if}
 	</div>
 	<div class="mapcontainer" bind:this={mapcontainer}></div>
