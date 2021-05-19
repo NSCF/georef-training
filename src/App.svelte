@@ -116,7 +116,7 @@
 
 		firebase.database().ref('georefTraining/georefs').on('child_added', snap => {
 			let coords = snap.val()
-			coordsArray.push(coords)
+			coordsArray = [...coordsArray, coords]
 			georefCount++
 			
 			if(iamleader || revealAll) {
@@ -371,13 +371,12 @@
 	</div>
 	<div class="btn-flex">
 		<button class="action-btn" disabled={georefSubmitted} on:click={submitGeoref}>Submit my georef</button>
-		{#if iamleader}
 		<div>
 			<span>{coordsArray.length} georef/s</span>
-			<button class="action-btn" disabled={!georefCount || revealAll} on:click={revealGeorefs}>Reveal georefs</button>
+			{#if iamleader}
+				<button class="action-btn" disabled={!georefCount || revealAll} on:click={revealGeorefs}>Reveal georefs</button>
+			{/if}
 		</div>
-			
-		{/if}
 	</div>
 	<div class="mapcontainer" bind:this={mapcontainer}></div>
 </main>
