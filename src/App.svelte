@@ -79,7 +79,7 @@
 
 				revealAll = true
 				for (let coord of coordsArray) {
-					plotCoords(coord.decimalCoords, map, coord.uncertaintyVal, coord.uncertaintyUnit, false, coord.leader, false)
+					setTimeout(plotCoords(coord.decimalCoords, map, coord.uncertaintyVal, coord.uncertaintyUnit, false, coord.leader, false), Math.round(Math.random() * 2000))
 				}
 			}
 			else {
@@ -432,7 +432,7 @@
 		font-size: 1.2em;
 		color: rgb(206, 91, 91);
 		margin-top:0;
-		width:50%;
+		width:100%;
 		border-radius:4px;
 		padding: 0.5em;
 		border: 2px solid lightgray;
