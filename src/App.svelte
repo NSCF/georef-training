@@ -125,6 +125,13 @@
 			}
 		})
 
+		//handle if georefs removed on back end
+		firebase.database().ref('georefTraining/georefs').on('value', snap => {
+			if(!snap.exists()) {
+				clearMarkers()
+			}
+		})
+
 		//this triggers showing all coords on the map
 		firebase.database().ref('georefTraining/showAll').on('value', snap => {
 			if(snap.val()){
